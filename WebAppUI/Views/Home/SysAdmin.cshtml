@@ -1,0 +1,66 @@
+﻿@model ProductListModel
+@{
+    ViewData["Title"] = " Admin Page";
+}
+
+<div class="container-xxl">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-8"><h2>Brand Product <b>Details</b></h2></div>
+                    <div class="col-sm-4">
+                        <button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New</button>
+                    </div>
+                </div>
+            </div>
+            @if (Model.ProductDetails.Count() > 0)
+            {
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>ProductName</th>
+                            <th>BrandName</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Color</th>
+                            <th>Size</th>
+                            <th>Discount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.ProductDetails)
+                        {
+                            <tr>
+                                <th scope="row">@item.Id</th>
+                                <td>
+                                    <img src="~/img/productImg.jpg" width="50" />
+                                </td>
+                                <td>@item.ProductName</td>
+                                <td>@item.BrandName </td>
+                                <td>@item.CategoryName</td>
+                                <td>@item.Price</td>
+                                <td>@item.Color</td>
+                                <td>@item.Size</td>
+                                <td>@item.Discount</td>
+                                <td>
+                                    <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+                                    <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">Yorumlara Bak</i></a>
+                                    <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                                    <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                                </td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <div class="alert alert-warning">
+                    <h4>No Products</h4>
+                </div>
+            }
+        </div>
+    </div>
+</div>
