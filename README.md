@@ -6,7 +6,7 @@
 
 ### Kullanıcı Girişi
 ##### Admin :Email="admin@gmail.com", Password: 12345Test.
-##### SysAdmin :Email="sysadmin@gmail.com", Password: 12345Tes.
+##### SysAdmin :Email="sysadmin@gmail.com", Password: 12345Test
 ##### Customer :Email="customer1@gmail.com", Password: 12345Test
 
 ### Kullanılan Yapılar
@@ -20,5 +20,5 @@
 - **Entities Katmanı**: Veritabanı Tabloları
 - **DataAccess Katmanı** : Veritabanı işlemleri
 - **Business Katmanı**: İş kuralları
-- **Core Katmanı**: Tüm projelerde ortak kullanılan yapılar, Repository
+- **Core Katmanı**: Tüm projelerde ortak kullanılan yapılar, Repository,Result
 - **WebUI Katmanı**: Arayüz katmanı
