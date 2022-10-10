@@ -20,5 +20,5 @@
 - **Entities Katmanı**: Veritabanı Tabloları
 - **DataAccess Katmanı** : Veritabanı işlemleri
 - **Business Katmanı**: İş kuralları
-- **Core Katmanı**: Tüm projelerde ortak kullanılan yapılar, Repository
+- **Core Katmanı**: Tüm projelerde ortak kullanılan yapılar, Repository,Result
 - **WebUI Katmanı**: Arayüz katmanı
