@@ -3,7 +3,6 @@ using Autofac;
 using DataAccess.Concrete.EntityFramework;
 using Business.DependencyResolvers.Autofac;
 using WebAppUI.Models;
-using WebAppUI.Middlewares;
 using WebAppUI.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
@@ -11,6 +10,7 @@ using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Autofac
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 builder.Host.ConfigureContainer<ContainerBuilder>(builder => builder.RegisterModule(new AutofacBusinessModule()));
 
@@ -18,10 +18,12 @@ builder.Host.ConfigureContainer<ContainerBuilder>(builder => builder.RegisterMod
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+// Model
 builder.Services.AddSingleton<ProductListModel>();
 
 
 
+// Identity & Database
 
 builder.Services.AddDbContext<ApplicationIdentityDbContext>(options =>
              options.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=ECommerceDb;integrated security=true;"));
@@ -30,6 +32,8 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationIdentityDbContext>()
                 .AddDefaultTokenProviders();
 
+
+// Password rules
 builder.Services.Configure<IdentityOptions>(options =>
 {
     // password
@@ -51,6 +55,7 @@ builder.Services.Configure<IdentityOptions>(options =>
     //options.SignIn.RequireConfirmedPhoneNumber = false;
 });
 
+// Cookie settings
 builder.Services.ConfigureApplicationCookie(options =>
 {
     options.LoginPath = "/account/login";

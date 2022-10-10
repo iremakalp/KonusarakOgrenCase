@@ -18,20 +18,6 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<ProductManager>().As<IProductService>().SingleInstance();
             builder.RegisterType<EfProductDal>().As<IProductDal>().SingleInstance();
 
-            // Category
-            builder.RegisterType<CategoryManager>().As<ICategoryService>().SingleInstance();
-            builder.RegisterType<EfCategoryDal>().As<ICategoryDal>().SingleInstance();
-
-            // Brand
-            builder.RegisterType<BrandManager>().As<IBrandService>().SingleInstance();
-            builder.RegisterType<EfBrandDal>().As<IBrandDal>().SingleInstance();
-
-            // UserProductComment
-            builder.RegisterType<UserProductCommentManager>().As<IUserProductCommentService>().SingleInstance();
-            builder.RegisterType<EfUserProductCommentDal>().As<IUserProductCommentDal>().SingleInstance();
-
-
-
         }
     }
 }
