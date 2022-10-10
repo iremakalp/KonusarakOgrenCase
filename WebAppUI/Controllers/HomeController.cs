@@ -26,7 +26,7 @@ namespace WebAppUI.Controllers
             return View();
         }
 
-        [Authorize(Roles = "Admin")]
+       [Authorize(Roles = "Admin")]
         public IActionResult Admin()
         {
             var result = _productService.GetDetails();
@@ -39,7 +39,7 @@ namespace WebAppUI.Controllers
             return View();
         }
 
-        [Authorize(Roles = "Customer")]
+      [Authorize(Roles = "Customer")]
         public IActionResult Customer()
         {
             var result = _productService.GetDetails();
@@ -54,6 +54,12 @@ namespace WebAppUI.Controllers
         [Authorize(Roles ="SysAdmin")]
         public IActionResult SysAdmin()
         {
+            var result = _productService.GetDetails();
+            _productListModel.ProductDetails = result.Data;
+            if (result.Success)
+            {
+                return View(_productListModel);
+            }
             return View();
         }
     }

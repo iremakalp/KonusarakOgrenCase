@@ -14,7 +14,7 @@
 
 
 <body>
-    <div class="container-xxl">
+    <div class="container-ls">
         <div class="table-responsive">
             <div class="table-wrapper">
                 <div class="table-title">
@@ -30,11 +30,13 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr>
+                                <th>Id</th>
+                                <th>Image</th>
                                 <th>ProductName</th>
                                 <th>BrandName</th>
                                 <th>Category</th>
                                 <th>Price</th>
-                                <th>Color</th>
+                                <th >Color</th>
                                 <th>Size</th>
                                 <th>Discount</th>
                             </tr>
@@ -45,7 +47,7 @@
                                 <tr>
                                     <th scope="row">@item.Id</th>
                                     <td>
-                                        <img src="~/img/productImg.jpg" width="50" />
+                                        <img src="~/img/product.jpg" width="50" />
                                     </td>
                                     <td>@item.ProductName</td>
                                     <td>@item.BrandName </td>

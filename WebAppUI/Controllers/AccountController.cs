@@ -38,15 +38,15 @@ namespace WebAppUI.Controllers
 
             if (result.Succeeded)
             {
-                //var userRole=GetRole(model);
-                //if(userRole=="Admin")
-                //{
-                //    return RedirectToAction("Admin","Home");
-                //}
-                //else if (userRole=="SysAdmin")
-                //{
-                //    return RedirectToAction("SysAdmin", "Home");
-                //}
+            var userRole=GetRole(model);
+                if(userRole=="Admin")
+                {
+                   return RedirectToAction("Admin","Home");
+                }
+                else if (userRole=="SysAdmin")
+                {
+                    return RedirectToAction("SysAdmin", "Home");
+                }
                 return RedirectToAction("Customer", "Home");
             }
 
@@ -63,7 +63,6 @@ namespace WebAppUI.Controllers
         {
             return View();
         }
-
 
         private string GetRole(LoginModel loginModel)
         {

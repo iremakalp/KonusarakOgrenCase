@@ -30,10 +30,11 @@ body {
 
 .table-wrapper {
     width: 700px;
-    margin: 30px auto;
+    margin: auto;
+    margin-left: px;
     background: #fff;
-    padding: 20px;
-    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    padding-top: 35px;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 5%);
 }
 
 .table-title {
@@ -62,7 +63,8 @@ body {
         }
 
 table.table {
-    table-layout: fixed;
+    margin-right: 20px;
+    table-layout: auto;
 }
 
     table.table tr th, table.table tr td {
