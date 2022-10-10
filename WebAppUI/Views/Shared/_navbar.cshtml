@@ -1,6 +1,11 @@
 ﻿
 
 <style>
+    .nav-item{
+        margin: 4px;
+         color:white;
+        font-size: 15px;
+    }
     .navbar
     {
         color:white;
@@ -32,37 +37,37 @@
                 if (User.IsInRole("SysAdmin"))
                 {
                     <li class="nav-item">
-                        <a asp-controller="SysAdmin" asp-action="" class="navbarText navbar-text ">Customer Operations </a>
+                        <a asp-controller="SysAdmin" asp-action="" style="text-align:left; color: white;"  class="navbarText navbar-text ">Customer Operations </a>
                     </li>                 
                     <li class="nav-item">
-                        <a asp-controller="SysAdmin" asp-action="" class="navbarText navbar-text ">Product Operations</a>
+                        <a asp-controller="SysAdmin" asp-action="" style="text-align:left; color: white;"  class="navbarText navbar-text ">Product Operations</a>
                     </li>
                     <li class="nav-item">
-                        <a asp-controller="SysAdmin" asp-action="" class="navbarText navbar-text">Brand Operations</a>
+                        <a asp-controller="SysAdmin" asp-action="" style="text-align:left; color: white;"  class="navbarText navbar-text">Brand Operations</a>
                     </li>
                     <li class="nav-item">
-                        <a asp-controller="SysAdmin" asp-action="" class="navbarText navbar-text">System Operations</a>
+                        <a asp-controller="SysAdmin" asp-action="" style="text-align:left; color: white;"  class="navbarText navbar-text">System Operations</a>
                     </li>
                 }
                 if (User.IsInRole("Admin"))
                 {
                     <li class="nav-item">
-                        <a asp-controller="Admin" asp-action="" class="navbarText navbar-text">Add Brand </a>
+                        <a asp-controller="Admin" asp-action="" style="text-align:left; color: white;"  class="navbarText navbar-text">Add Brand </a>
                     </li>
                     <li class="nav-item">
-                        <a asp-controller="Admin" asp-action="" class="navbarText navbar-text">Update Brand</a>
+                        <a asp-controller="Admin" asp-action="" style="text-align:left; color: white;"  class="navbarText navbar-text">Update Brand</a>
                     </li>
                     <li class="nav-item">
-                        <a asp-controller="Admin" asp-action="" class="navbarText navbar-text">Delete Brand</a>
+                        <a asp-controller="Admin" asp-action="" style="text-align:left; color: white;"  class="navbarText navbar-text">Delete Brand</a>
                     </li>
                 }
                 if (User.IsInRole("Customer"))
                 {
                     <li class="nav-item">
-                        <a asp-controller="Customer" asp-action="" class="navbarText navbar-text"> Shop </a>
+                        <a asp-controller="Customer" asp-action="" style="text-align:left; color: white;"  class="navbarText navbar-text"> Shop </a>
                     </li>
                     <li class="nav-item">
-                        <a asp-controller="Customer" asp-action="" class="navbarText navbar-text">Add Product Comment</a>
+                        <a asp-controller="Customer" asp-action="" style="text-align:left; color: white;"  class="navbarText navbar-text">Add Product Comment</a>
                     </li>           
                 }
             }
@@ -73,18 +78,18 @@
             @if (User.Identity.IsAuthenticated)
             {
                 <li class="nav-item">
-                    <a asp-controller="Account" asp-action="" class="navbarText navbar-text">
+                    <a asp-controller="Account" asp-action="" style="text-align:left; color: white;"  class="navbarText navbar-text">
                         @User.Identity.Name
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a asp-controller="Account" asp-action="Logout" class="navbarText navbar-text">Logout</a>
+                    <a asp-controller="Account" asp-action="Logout" style="text-align:left; color: white;"  class="navbarText navbar-text">Logout</a>
                 </li>
             }
             else
             {
                 <li class="nav-item">
-                    <a asp-controller="Account" asp-action="Login" class="navbarText navbar-text">Login</a>
+                    <a asp-controller="Account" asp-action="Login" style="text-align:left; color: white;"  class="navbarText navbar-text">Login</a>
                 </li>      
             }
         </ul>

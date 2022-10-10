@@ -10,13 +10,11 @@ namespace WebAppUI.Controllers
     {
         private UserManager<ApplicationUser> _userManager;
         private SignInManager<ApplicationUser> _signInManager;
-        private readonly ApplicationIdentityDbContext _context;
 
-        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, ApplicationIdentityDbContext context)
+        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
-            _context = context;
         }
         public IActionResult Login()
         {
@@ -38,16 +36,8 @@ namespace WebAppUI.Controllers
 
             if (result.Succeeded)
             {
-            var userRole=GetRole(model);
-                if(userRole=="Admin")
-                {
-                   return RedirectToAction("Admin","Home");
-                }
-                else if (userRole=="SysAdmin")
-                {
-                    return RedirectToAction("SysAdmin", "Home");
-                }
-                return RedirectToAction("Customer", "Home");
+            
+                return RedirectToAction("Index", "Home");
             }
 
             ModelState.AddModelError("", "Email veya parola yanlış");
@@ -62,23 +52,6 @@ namespace WebAppUI.Controllers
         public IActionResult Accessdenied()
         {
             return View();
-        }
-
-        private string GetRole(LoginModel loginModel)
-        {
-          
-            var result = from ur in _context.UserRoles
-                         join r in _context.Roles
-                         on ur.RoleId equals r.Id
-                         join u in _context.Users
-                         on ur.UserId equals u.Id
-                         select new UserRoleModel
-                         {
-                             UserName= u.UserName,
-                             RoleName=r.Name
-                         }.RoleName;
-            
-            return result.ToString();
         }
     }
 }
